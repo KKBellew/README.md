@@ -13,13 +13,10 @@ function renderLicenseBadge(license) {
     };
     if (licenseBadges.hasOwnProperty(license)){
         return licenseBadges[license]
-        else{
+     } else{
             return '';
-        };
     }
 }
-
-
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -36,10 +33,10 @@ function renderLicenseLink(license) {
     };
     if (licenseLinks.hasOwnProperty(license)){
         return licenseLinks[license];
-        else{
+    }else{
             return '';
-        };
-    };
+    
+    }
 }
 
 // TODO: Create a function that returns the license section of README
@@ -49,17 +46,15 @@ function renderLicenseSection(license) {
     const licenseBadges= renderedLicenseBadges(license);
     
     if (license){
-        return '## License This project is licensed under the [${license} License](${licenseLink}). ${licenseBagdes};
-        else{
+        return `## License\nThis project is licensed under the [${license} License](${licenseLink}). ${licenseBagdes}`;
+    }else{
             return '';
-        }
     }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return 
-`# ${data.title}
+  return `# ${data.title}
  
 ## Description
 ${data.description}

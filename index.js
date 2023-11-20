@@ -4,12 +4,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path= require('path');
-const generateMarkdown = required('./generateMarkdown');
+const generateMarkdown = require('./generateMarkdown');
 
 const questions = [
-
-questions
-  .prompt([
     {
       type: 'input',
       message: 'What is the name of your project?',
@@ -56,20 +53,19 @@ questions
         message: 'What is you GitHub Username and email?',
         name: 'Questions',
     }, 
-  ])
 
 ];
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
 
 const filePath= path.join(__dirname, fileName);
 const content = JSON.stringify(data, null, 2);
 
 fs.writeFileSync(filePath, content, 'utf8');
 console.log(`file "${fileName}" has been created!`);
-
+}
 
 
 // TODO: Create a function to initialize app
